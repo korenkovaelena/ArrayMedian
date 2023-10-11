@@ -40,22 +40,19 @@ public class Main {
         System.out.println("Среднее арифметическое = "+ averege);
         return averege;
     }
-    public static double[] median(double[] sortedArr, double sum){
+    public static double median(double[] sortedArr, double sum){
         double middle = (double) sortedArr.length /2;
-        double[] medianOne = new double[1];
-        double[] medianTwo = new double[2];
+        double median;
         if (middle % 1  != 0) {
-            medianOne[0] = sortedArr[(int) middle];
-            System.out.println("Медиана = " + Arrays.toString(medianOne));
-            return medianOne;
+            median = sortedArr[(int) middle];
+            System.out.println("Медиана = " + median);
         }
         else {
-            medianTwo[0] = sortedArr[(int) middle-1];
-            medianTwo[1] = sortedArr[(int) middle];
-            System.out.println("Медиана = " + Arrays.toString(medianTwo));
-            return medianTwo;
-        }
+            median = (sortedArr[(int) middle-1] + sortedArr[(int) middle])/2;
+            System.out.println("Медиана = " + median);
 
+        }
+        return median;
     }
     public static double[] sortArr(double[] arr, double sum){
         double[] sortedArr = new double[arr.length];
